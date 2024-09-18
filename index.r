@@ -6,4 +6,13 @@ vendedores<-c("Joana","Bianca", "Arthur", "José", "Yan", "Gustavo", "Jorge", "L
 atingiuMeta <- vendasFuncionarios >= 20
 qtdMetaAtingida <- sum(atingiuMeta)
 
-cat("Total de vendedores que atingiram a meta: " ,qtdMetaAtingida)
+atingiuMeta[atingiuMeta == TRUE]<-"Atingiu" 
+atingiuMeta[atingiuMeta == FALSE]<-"Não atingiu" 
+
+
+cat("Total de vendedores que atingiram a meta " ,qtdMetaAtingida, "\n")
+
+qtdMetas <- length(vendasFuncionarios)
+for (index in 1:qtdMetas) {
+  cat(vendedores[index], atingiuMeta[index], "a meta \n")
+}
